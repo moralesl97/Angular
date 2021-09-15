@@ -1,0 +1,30 @@
+
+<h1>Notes</h1>
+<div style="margin-bottom: 1em;">
+    <a href="/agregar-notas">Agregar Nota</a>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>CreatedAt</th>
+            <th>UpdatedAt</th>
+            <th>Options</th>
+        </tr>
+        <tr *ngFor="let n of notes">
+                <td>{{n._id}}</td>
+                <td>{{n.title}}</td>
+                <td>{{n.content}}</td>
+                <td>{{n.createdAt}}</td>
+                <td>{{n.updatedAt}}</td>
+                <td>
+                    <button (click)="editNote(n._id)">Edit</button>
+                    <button style="margin-left: 1em;" (click)="deleteNote(n._id)">Delete</button>
+                </td>
+        </tr>
+    </table>
+</div>
+

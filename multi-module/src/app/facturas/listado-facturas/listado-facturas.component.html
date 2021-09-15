@@ -1,0 +1,37 @@
+<b>Facturas:</b>
+<!-- <div>
+    <p *ngFor="let f of facturas">{{f.id}} {{f.fecha}} {{f.cliente}} {{f.monto}}</p>
+</div> -->
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Fecha</th>
+        <th>Cliente</th>
+        <th>Monto</th>
+    </tr>
+    <tr *ngFor="let f of facturas">
+        <td>{{f.id}}</td>
+        <td>{{f.fecha}}</td>
+        <td>{{f.cliente}}</td>
+        <td>{{f.monto}}</td>
+    </tr>
+</table>
+
+Factura: <input type="number" [(ngModel)]="nuevaFactura.id"> 
+Fecha: <input type="date" [(ngModel)]="nuevaFactura.fecha"> 
+Cliente: <input type="text" [(ngModel)]="nuevaFactura.cliente"> 
+Monto: <input type="number" [(ngModel)]="nuevaFactura.monto"> 
+<button style="margin-left: 1em;" (click)="agregarFactura()">Agregar Factura</button>
+
+<div style="margin-top: 1em;">
+    Buscar Factura: <input type="number" [(ngModel)]="idFactura"> 
+    <button style="margin-left: 1em;" (click)="buscarFactura()">Buscar</button>
+</div>
+
+<div *ngIf="facturaEncontrada != undefined">
+        <p><b>Id:</b> {{facturaEncontrada.id}}</p>
+        <p><b>Fecha:</b> {{facturaEncontrada.fecha}}</p>
+        <p><b>Cliente:</b> {{facturaEncontrada.cliente}}</p>
+        <p><b>Monto:</b> {{facturaEncontrada.monto}}</p>
+</div>

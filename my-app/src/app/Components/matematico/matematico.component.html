@@ -1,0 +1,12 @@
+Numero 1 <input type="number" [(ngModel)]="numero1" (keyup) = "calcularResultado()">
+Numero 2 <input type="number" [(ngModel)]="numero2" (keyup) = "calcularResultado()">
+<div>
+    <button (click)="calcularResultado()">Calcular</button>
+</div>
+<div *ngFor="let op of operaciones">
+    <input  type="radio" name="operacion" [id]= "op.nombre" (change) = "calcularResultado()" [(ngModel)]="operacion" [value]="op.valor"> 
+    <label [for]="op.nombre">{{op.nombre}}</label>
+</div>
+Total: <input [(ngModel)]="total" disabled>
+
+<app-matematico-result [resultadoAMostrar]="total"></app-matematico-result>

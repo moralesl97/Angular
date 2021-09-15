@@ -1,0 +1,7 @@
+<h1>Editar Nota</h1>
+<div style="margin-top: 1em;">
+    Title: <input type="text" [(ngModel)]="noteToEdit.title">
+    Content: <input type="text" [(ngModel)]="noteToEdit.content">
+    <button style="margin-left: 1em;" (click)="editNote()">Edit Note</button>
+    <button style="margin-left: 1em;" (click)="cancelEdit()">Cancel</button>
+</div>
